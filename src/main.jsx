@@ -5,6 +5,9 @@ import './index.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from './utils/theme.js'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import Home from './pages/Home.jsx'
+import Games from './pages/Games.jsx'
+import GameDetail from './pages/GameDetail.jsx'
 
 const router = createBrowserRouter([
   {
@@ -13,12 +16,20 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Home</div>,
+        element: <Home />,
       },
       {
         path: "/games",
-        element: <div>Games</div>,
+        element: <Games />,
       },
+      {
+        path: "/search",
+        element: <div>Search</div>
+      },
+      {
+        path: "/game/:id",
+        element: <GameDetail />
+      }
     ],
   },
 ]);
